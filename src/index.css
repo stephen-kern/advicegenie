@@ -31,6 +31,8 @@ body {
 
 .advice-container{
   background-color: var(--neutral-color);
+  display: flex;
+  flex-direction: column;
   
 }
 
