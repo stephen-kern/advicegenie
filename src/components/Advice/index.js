@@ -4,13 +4,14 @@ import Dice from "../../images/icon-dice.svg";
 
 const Advice = () => {
   const [advice, setAdvice] = useState("");
-  const [adviceId, setAdviceId] = useState(Math.floor(Math.random() * 100000));
+  const [adviceId, setAdviceId] = useState(Math.floor(Math.random() * 500));
 
   const fetchAdvice = async () => {
-    const response = await fetch("https://api.adviceslip.com/advice");
+    const timestamp = new Date().getTime();
+    const response = await fetch(`https://api.adviceslip.com/advice?t=${timestamp}`);
     const data = await response.json();
     setAdvice(data.slip.advice);
-    setAdviceId(Math.floor(Math.random() * 100));
+    setAdviceId(Math.floor(Math.random() * 500));
   };
 
   useEffect(() => {
@@ -18,18 +19,16 @@ const Advice = () => {
   }, []);
 
   return (
-    <main>
+    <div className="advice-layout">
       <div className="advice-container">
-        <p className="advice-number">
-          ADVICE #{adviceId}
-        </p>
+        <p className="advice-number">ADVICE #{adviceId}</p>
         <p className="advice-quote">"{advice}"</p>
-        <img src={Divider} alt="Pattern Divider for card"></img>
-        <button className="advice-button" onClick={fetchAdvice}><img className="dice-icon" src={Dice} alt="Dice svg"></img></button>
+        <img className="advice-divider" src={Divider} alt="Pattern Divider for card"></img>
+        <button className="advice-button" onClick={fetchAdvice}>
+          <img className="dice-icon" src={Dice} alt="Dice svg"></img>
+        </button>
       </div>
-
-      
-    </main>
+    </div>
   );
 };
 

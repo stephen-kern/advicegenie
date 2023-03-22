@@ -24,33 +24,55 @@ body {
 .App{
   min-height: 100vh;
   min-height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: var(--bg-color);
+}
+
+.advice-layout{
+  display: flex;
+  justify-content: center;
 }
 
 .advice-container{
   background-color: var(--neutral-color);
   display: flex;
   flex-direction: column;
-  
+  align-items: center;
+  justify-content: space-between;
+  max-width: 30rem;
+  min-height: 18rem;
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
 }
 
 .advice-number{
   color: var(--accent-color);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
 }
 
 .advice-quote{
   color: var(--primary-color);
   font-size: 1.75rem;
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+.advice-divider{
+  margin-bottom: 2rem;
+  max-width: 90%;
 }
 
 .advice-button{
   background-color: var(--accent-color);
   border: none;
   padding: 15px;
+  display: flex;
   border-radius: 50%;
-  display: block;
+  margin-bottom: -65px;
 }
 
 .dice-icon{
