@@ -19,7 +19,7 @@ const Advice = () => {
   }, []);
 
   return (
-    <div className="advice-layout">
+    <div className="advice-layout" data-testid="advice-layout">
       <div className="advice-container">
         <p className="advice-number">ADVICE #{adviceId}</p>
         <p className="advice-quote">"{advice}"</p>

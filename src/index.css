@@ -73,8 +73,22 @@ body {
   display: flex;
   border-radius: 50%;
   margin-bottom: -65px;
+  box-shadow: 0px 0px 10px #4CAF50;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.advice-button:hover{
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 0px 20px var(--accent-color);
 }
 
 .dice-icon{
   width: 1.1rem;
+}
+
+@media screen and (max-width: 375px){
+  .advice-container{
+    max-width: 92%;
+  }
 }
